@@ -1,11 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.title}>Tarefas </Text>
+      <View style={styles.containerInput}>
+        <TextInput placeholder="Digite sua tarefa" style={styles.input} />
+        
+        <TouchableOpacity style={styles.buttonAdd}>
+            <FontAwesome name="plus" size={24} color='#fff'/>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -13,8 +26,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#22272e",
   },
+  title: {
+    fontWeight:'bold',
+    fontSize: 24,
+    color: '#fff',
+    marginTop: '5%',
+    paddingStart: '5%',
+    marginBottom: 14, 
+
+
+  }
 });
